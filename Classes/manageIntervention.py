@@ -19,7 +19,7 @@ class ManageIntervention:
         for ligne in self.curseurBDD:
             dictionnaire_ligne = {}
             dictionnaire_ligne["intervention"] = indexe
-            dictionnaire_ligne["date_horoire"] = ligne.date_horoire
+            dictionnaire_ligne["date_horaire"] = ligne.date_horaire
             dictionnaire_ligne["adresse"] = ligne.adresse
             dictionnaire_ligne["modalite"] = ligne.modalite
             indexe += 1
