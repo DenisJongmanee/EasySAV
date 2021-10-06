@@ -1,6 +1,6 @@
 import sqlite3
 
-connexionBDD = sqlite3.connect("EasySaves.db")
+connexionBDD = sqlite3.connect("EasySaves.db") #Creer la connexion à la base de donnée "EasySaves.db"
 curseurBDD = connexionBDD.cursor()
 
 instructionBDD = f"CREATE TABLE IF NOT EXISTS intervention("\ 
@@ -8,8 +8,8 @@ instructionBDD = f"CREATE TABLE IF NOT EXISTS intervention("\
                 f"id_intervenant INTEGER,"\
                 f"date_horaire DATE,"\
                 f"adresse TEXT,"\
-                f"modalite TEXT)"
+                f"modalite TEXT)" #Creation table intervention avec ses colonnes
 
 curseurBDD.execute(instructionBDD)
 connexionBDD.commit()
-connexionBDD.close()
+connexionBDD.close() #Fermer connexion à la base de donnée
