@@ -27,6 +27,6 @@ class ManageIntervention:
             dictionnaire_ligne["date_horaire"] = ligne[2]
             dictionnaire_ligne["adresse"] = ligne[3]
             dictionnaire_ligne["modalite"] = ligne[4]
-            indexe += 1 #incrémente le numero d'intervention
             dictionnaire_retour[indexe] = dictionnaire_ligne
+            indexe += 1  # incrémente le numero d'intervention
         return dictionnaire_retour
