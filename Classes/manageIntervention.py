@@ -12,4 +12,16 @@ class ManageIntervention:
         self.connexionBDD.commit()
 
     def liste_intervention(self, intervenant):
-        pass
+        instructionBDD = "SELECT * FROM intervention"
+        self.curseurBDD.execute(instructionBDD)
+        dictionnaire_retour = {}
+        indexe = 1
+        for ligne in self.curseurBDD:
+            dictionnaire_ligne = {}
+            dictionnaire_ligne["intervention"] = indexe
+            dictionnaire_ligne["date_horoire"] = ligne.date_horoire
+            dictionnaire_ligne["adresse"] = ligne.adresse
+            dictionnaire_ligne["modalite"] = ligne.modalite
+            indexe += 1
+            dictionnaire_retour[indexe] = dictionnaire_ligne
+        return dictionnaire_retour
