@@ -6,8 +6,8 @@ class ManageIntervention:
         self.curseurBDD = self.connexionBDD.cursor()
 
     def ajout_intervention(self, intervenant, date, adresse, modalite):
-        instructionBDD = f"INSERT INTO intervention (id_intervenant, date_horaire, addresse, modalite) "\
-                        f"VALUES ({intervenant}, {date}, {adresse}, {modalite})"
+        instructionBDD = f"INSERT INTO intervention (id_intervenant, date_horaire, adresse, modalite) "\
+                        f"VALUES ({intervenant}, '{date}', '{adresse}', '{modalite}')"
         self.curseurBDD.execute(instructionBDD)
         self.connexionBDD.commit()
 
