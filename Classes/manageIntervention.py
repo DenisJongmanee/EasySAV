@@ -12,7 +12,7 @@ class ManageIntervention:
         self.connexionBDD.commit()
 
     def liste_intervention(self, intervenant):
-        instructionBDD = "SELECT * FROM intervention"
+        instructionBDD = f"SELECT * FROM intervention WHERE id_intervenant = {intervenant}"
         self.curseurBDD.execute(instructionBDD)
         dictionnaire_retour = {}
         indexe = 1
