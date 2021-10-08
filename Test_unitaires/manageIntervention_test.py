@@ -14,7 +14,7 @@ class ManageInterventionTestCase(unittest.TestCase):
         #Act
         cmdSelect = f"SELECT * FROM intervention WHERE id_intervention = {lastId} "
         manageIntervention.curseurBDD.execute(cmdSelect)
-        
+
         # Assert
         for row in manageIntervention.curseurBDD:
             self.assertEqual(row[1], 100)
