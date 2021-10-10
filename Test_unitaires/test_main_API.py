@@ -1,6 +1,7 @@
 import json
 import unittest
-from main_API import main_API
+from EasySAV.main_API import main_API
+
 from flask import jsonify
 
 class MainAPITestCase(unittest.TestCase):

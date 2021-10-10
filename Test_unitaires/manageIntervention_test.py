@@ -1,5 +1,6 @@
 import unittest
-from Classes.manageIntervention import ManageIntervention
+from EasySAV.Classes.manageIntervention import ManageIntervention
+
 
 class ManageInterventionTestCase(unittest.TestCase):
 
