@@ -3,6 +3,7 @@ from Classes.manageIntervention import ManageIntervention
 
 main_API = Flask(__name__)
 
+#Récuperer les interventions en fonction de l'ID de l'intervenant
 @main_API.route('/EasySAV/Travail/<int:intervenant>')
 def travail(intervenant):
     try:
@@ -14,6 +15,7 @@ def travail(intervenant):
     except:
         abort(500)
 
+#Ajouter une intervention
 @main_API.route('/EasySAV/AjoutIntervention', methods={'POST'})
 def ajout_intervention():
     message = request.get_json(force=True)
