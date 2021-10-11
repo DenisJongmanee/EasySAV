@@ -9,10 +9,9 @@ class ManageInterventionTestCase(unittest.TestCase):
         #Arrange
         manageIntervention = ManageIntervention()
 
+        # Act
         manageIntervention.ajout_intervention(100, '2021-10-06 20:00:00', 'testAdresse','test')
         lastId = manageIntervention.curseurBDD.lastrowid
-
-        #Act
         cmdSelect = f"SELECT * FROM intervention WHERE id_intervention = {lastId} "
         manageIntervention.curseurBDD.execute(cmdSelect)
 
@@ -31,12 +30,12 @@ class ManageInterventionTestCase(unittest.TestCase):
         #Arrange
         manageIntervention = ManageIntervention()
 
+        # Act
         manageIntervention.ajout_intervention(22, '2021-10-06 20:00:00', 'testAdresse','test')
         ajout1 = manageIntervention.curseurBDD.lastrowid
         manageIntervention.ajout_intervention(22, '2021-10-07 20:20:20', 'testAdresse2', 'test')
         ajout2 = manageIntervention.curseurBDD.lastrowid
 
-        #Act
         listIntervention = manageIntervention.liste_intervention(22)
         intervention1 = {"intervention" : 1, "date_horaire" : '2021-10-06 20:00:00', "adresse" : 'testAdresse', "modalite" : "test" }
         intervention2 = {"intervention" : 2, "date_horaire" : '2021-10-07 20:20:20', "adresse" : 'testAdresse2', 'modalite' : 'test'}
@@ -44,7 +43,6 @@ class ManageInterventionTestCase(unittest.TestCase):
 
         #Assert
         self.assertEqual(listIntervention, listInterventionTest)
-
 
         cmdDelete = f"DELETE FROM intervention WHERE id_intervention = {ajout1}"
         manageIntervention.curseurBDD.execute(cmdDelete)
